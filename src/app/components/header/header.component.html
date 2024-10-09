@@ -8,11 +8,10 @@
       <div id="text-header" style="margin-top: 0px;">
         <h1>{{basics?.name}}<br><span>{{basics?.label}}</span></h1>
         
-
-        <p id="aboutbutton" class="menubutton" (click)="navigateTo('about')">about</p>
-        <p id="experiencebutton" class="menubutton" (click)="navigateTo('experience')">experience</p>
-        <p id="educationbutton" class="menubutton" (click)="navigateTo('education')">education</p>
-        <p id="skillsbutton" class="menubutton" (click)="navigateTo('skills')">skills</p>
+        <p id="aboutbutton" class="menubutton fas fa-user ico" (click)="navigateTo('about')" title="Wie ben ik?"></p>
+        <p id="educationbutton" class="menubutton fas fa-university ico" (click)="navigateTo('education')" title="Opleiding"></p>
+        <p id="experiencebutton" class="menubutton fas fa-suitcase ico " (click)="navigateTo('experience')" title="Werkervaring"></p>
+        <p id="skillsbutton" class="menubutton fas fa-tasks ico" (click)="navigateTo('skills')" title="Skills"></p>
 
 
       </div>
