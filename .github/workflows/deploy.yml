@@ -28,6 +28,8 @@ jobs:
         run: |
           sed -i 's|gistResumeUrl: ""|gistResumeUrl: "'${{ secrets.GISTRESUME }}'"|' src/environments/environment.prod.ts
 
+      - name: Verify environment file
+        run: cat src/environments/environment.prod.ts
 
       - name: Build Angular app
         run: |
