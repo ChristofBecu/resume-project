@@ -1,7 +1,6 @@
 // src/app/services/resume.service.ts
 import { Injectable } from '@angular/core';
 import { catchError, from, Observable, of } from 'rxjs';
-import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +9,7 @@ export class ResumeService {
   private gistUrl: string;
 
   constructor() {
-    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-    this.gistUrl = corsProxy + (environment.gistResumeUrl || '/assets/resume.json');
+    this.gistUrl = '/assets/resume.json';
   }
 
   getResumeData(): Observable<any> {
