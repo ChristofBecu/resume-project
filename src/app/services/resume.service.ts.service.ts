@@ -9,7 +9,11 @@ export class ResumeService {
   private gistUrl: string;
 
   constructor() {
-    this.gistUrl = '/resume-project/assets/resume.json';
+    if (window.location.hostname === 'localhost') {
+      this.gistUrl = '/assets/resume.json';
+    } else {
+      this.gistUrl = '/resume-project/assets/resume.json';
+    }
   }
 
   getResumeData(): Observable<any> {
