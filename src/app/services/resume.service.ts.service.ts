@@ -9,7 +9,7 @@ export class ResumeService {
   private gistUrl: string;
 
   constructor() {
-    this.gistUrl = '/assets/resume.json';
+    this.gistUrl = '/resume-project/assets/resume.json';
   }
 
   getResumeData(): Observable<any> {
