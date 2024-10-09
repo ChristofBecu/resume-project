@@ -22,10 +22,12 @@ jobs:
         run: npm install
       
       - name: Replace environment variable
-        run: |
-          sed -i "s|gistResumeUrl: ''|gistResumeUrl: '${GISTRESUME}'|" src/environments/environment.prod.ts
-          echo "Updated environment.prod.ts:"
-          cat src/environments/environment.prod.ts
+        run: node replaceEnv.js
+        env:
+          GISTRESUME: ${{ secrets.GISTRESUME }}
+
+      - name: Verify environment file
+        run: cat src/environments/environment.prod.ts
 
       - name: Build Angular app
         run: |
