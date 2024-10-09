@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div id="photo-header" class="text-center">
+      <!-- PHOTO (AVATAR) -->
+      <div id="photo">
+        <img src="{{ basics?.image }}" alt="avatar">
+      </div>
+      <div id="text-header" style="margin-top: 0px;">
+        <h1>{{basics?.name}}<br><span>{{basics?.label}}</span></h1>
+        
+
+        <p id="aboutbutton" class="menubutton" (click)="navigateTo('about')">about</p>
+        <p id="experiencebutton" class="menubutton" (click)="navigateTo('experience')">experience</p>
+        <p id="educationbutton" class="menubutton" (click)="navigateTo('education')">education</p>
+        <p id="skillsbutton" class="menubutton" (click)="navigateTo('skills')">skills</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
