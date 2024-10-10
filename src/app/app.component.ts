@@ -1,31 +1,37 @@
-import { Component, importProvidersFrom } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, importProvidersFrom, ChangeDetectorRef } from '@angular/core';
+import { Data, RouterOutlet } from '@angular/router';
 import { provideRouter } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
 import { ResumeService } from './services/resume.service.ts.service';
+import { AboutComponent } from './components/about/about.component';
+import { JsonData } from './models/data.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet,  HeaderComponent]
+  imports: [RouterOutlet,  HeaderComponent, AboutComponent]
 })
 
 
 export class AppComponent {
   name: string | undefined;
   image: string | undefined;
-  constructor(private resumeService: ResumeService) { }
+  data! : JsonData
+  constructor(private resumeService: ResumeService, private cdr : ChangeDetectorRef) { }
 
   ngOnInit() {
     this.resumeService.getResumeData().subscribe(data => {
+      this.data = data;
+      this.resumeService.setData(this.data);
       this.name = data.basics?.name;
       this.image = data.basics?.image;
       this.updateTitle();
       this.updateFavicon();
+      this.cdr.detectChanges();
     })
   }
 
