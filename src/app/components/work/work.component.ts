@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { Work } from '../../models/work.model';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'app-work',
   standalone: true,
-  templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.css'],
-  imports: [CommonModule, HttpClientModule]
+  templateUrl: './work.component.html',
+  styleUrls: ['./work.component.css'],
+  imports: [CommonModule]
 })
-export class ExperienceComponent implements OnInit {
-  experience!: any[];
+export class WorkComponent implements OnInit {
+  work!: Work[];
 
   constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
     this.resumeService.getResumeData().subscribe(data => {
-      this.experience = data.work;
+      this.work = data.work;
     });
   }
 }

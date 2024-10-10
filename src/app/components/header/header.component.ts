@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit {
       label: 'About',
     },
     {
-      route: 'experience',
-      label: 'Experience',
+      route: 'work',
+      label: 'Work',
     },
     {
       route: 'education',

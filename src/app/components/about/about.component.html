@@ -14,32 +14,47 @@
 
       <!-- ICONS -->
       <div class="contact-container">
-
         <!-- LOCATION -->
         <div class="contact-item">
-          <div class="icon pull-left text-center" (mouseover)="updateHoverText(basics.location.postalCode + ' ' +  basics.location.city + ' ' + basics.location.region + ' (' + basics.location.countryCode + ')')" (mouseleave)="clearHoverText()">
+          <div class="icon pull-left text-center" (mouseover)="
+              updateHoverText(
+                basics.location.postalCode +
+                  ' ' +
+                  basics.location.city +
+                  ' ' +
+                  basics.location.region +
+                  ' (' +
+                  basics.location.countryCode +
+                  ')'
+              )
+            " (mouseleave)="clearHoverText()">
+            <!-- <div class="icon pull-left text-center" (mouseover)="updateHoverText(basics?.location?.postalCode + ' ' +  basics?.location?.city + ' ' + basics?.location?.region + ' (' + basics?.location?.countryCode + ')')" (mouseleave)="clearHoverText()"> -->
             <span class="fas fa-map-marker fa-fw"></span>
           </div>
         </div>
 
         <!-- PHONE -->
-        <div class="contact-item" (mouseover)="updateHoverText(basics.phone)" (mouseleave)="clearHoverText()">
-          <div class="icon pull-left text-center">
-            <span class="fas fa-phone fa-fw"></span>
+        <a [href]="'tel:' + basics.phone">
+          <div class="contact-item">
+            <div class="icon pull-left text-center">
+              <span class="fas fa-phone fa-fw" title="call me"></span>
+            </div>
           </div>
-        </div>
+        </a>
 
         <!-- EMAIL -->
-        <div class="contact-item" (mouseover)="updateHoverText(basics?.email)" (mouseleave)="clearHoverText()">
-          <div class="icon pull-left text-center">
-            <span class="fas fa-envelope fa-fw"></span>
+        <a [href]="'mailto:' + basics.email">
+          <div class="contact-item">
+            <div class="icon pull-left text-center">
+              <span class="fas fa-envelope fa-fw" title="mail me"></span>
+            </div>
           </div>
-        </div>
+        </a>
 
         <!-- PROFILES -->
-        <div class="contact-item" *ngFor="let profile of profiles" (mouseover)="updateHoverText('go to ' + profile.network)" (mouseleave)="clearHoverText()">
+        <div class="contact-item" *ngFor="let profile of basics.profiles">
           <div class="icon pull-left text-center" (click)="openProfile(profile)">
-            <span class="fab fa-fw {{ profile.iconClass }}"></span>
+            <span class="fab fa-fw {{ profile.iconClass }}" title="open {{profile.network}}"></span>
           </div>
         </div>
       </div>
@@ -47,11 +62,6 @@
       <div class="hover-text-container">
         {{ hoverText }}
       </div>
-
-
-     
-
-
     </div>
   </div>
 </div>

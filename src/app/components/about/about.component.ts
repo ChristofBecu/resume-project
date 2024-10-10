@@ -2,13 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { CommonModule } from '@angular/common';
 import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
-
-interface Profile {
-  network: string;
-  iconClass?: string;
-  url?: string;
-  username?: string;
-}
+import { Profile } from '../../models/profile.model';
+import { Basics } from '../../models/basics.model';
+import { Location } from '../../models/location.model';
 
 @Component({
   selector: 'app-about',
@@ -20,23 +16,26 @@ interface Profile {
 export class AboutComponent implements OnInit {
 
   constructor(private resumeService: ResumeService) { }
-  transformedSummary: string | undefined;
-  basics!: any;
-  profiles!: Profile[];
+  transformedSummary!: string;
+  basics!: Basics;
+  location!: Location;
   hoverText: string = '';
 
   ngOnInit() {
     this.resumeService.getResumeData().subscribe(data => {
       const newLineToBrPipe = new NewLineToBrPipe();
       this.basics = data?.basics;
+      console.log(this.basics);
+      this.location = data?.basics?.location || [];
+      console.log(this.location);
       this.transformedSummary = newLineToBrPipe.transform(this.basics?.summary || '');
-      this.profiles = this.basics?.profiles || [];
+      
       this.updateProfileIcons();
     }); 
   }
 
   updateProfileIcons() {
-    this.profiles.forEach((profile: any) => {
+    this.basics?.profiles?.forEach((profile: Profile) => {
       switch (profile.network.toLowerCase()) {
         case "google-plus":
         case "googleplus":
@@ -81,10 +80,8 @@ export class AboutComponent implements OnInit {
           // try to automatically select the icon based on the name
           profile.iconClass = "fab fa-" + profile.network.toLowerCase();
       }
-      if (profile.url) {
-        profile.text = profile.url;
-    } else {
-        profile.text = profile.network + ": " + profile.username;
+      if (!profile.url) {
+        profile.url = profile.network + ": " + profile.username;
     }
     });
   }

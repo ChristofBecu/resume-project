@@ -1,10 +1,10 @@
 <div class="container">
 
-<div class="row" *ngFor="let job of experience">
+<div class="row" *ngFor="let job of work">
   <!-- <div class="job-details">
     <div class="profession">{{ job.position }}</div>
   </div> -->
-  <h3>{{ job.name }} - {{ job.position }} - {{ job.company }}</h3>
+  <h3>{{ job.name }} - {{ job.position }} - {{ job.name }}</h3>
   <p>{{ job.startDate }} - {{ job.endDate }}</p>
   <p>{{ job.summary }}</p>
 </div>
