@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/header/header.component.css"],
+  "sourcesContent": ["\n\n  .menubutton {\n    /* background-color: #ebeff4;\n    border: none; */\n    color: rgb(141, 140, 140);\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    /* margin: 4px 2px; */\n    cursor: pointer;\n    border-radius: 12px;\n    padding: 10px 24px;\n    margin-top: 20px;\n    margin-bottom: -10px;\n  }\n\n  .currentbutton {\n    /* background-color: #334960; */\n    text-decoration: #334960 underline;\n    color: black;\n    font-weight: bolder;\n    /* uppdercase */;\n  }\n\n  #photo-header{\n    margin-top: -75px;\n  }\n  #photo{\n    width: 160px;\n    height: 160px;\n    border-radius: 50%;\n    overflow: hidden;\n    padding: 5px;\n    background: #334960;\n    display: inline-block;\n  }\n\n  #photo img{\n    width: 150px;\n    height: 150px;\n    border-radius: 50%;\n  }\n\n  @media (min-width: 768px) {\n    #contactbutton {\n      display: none;\n    }\n  }"],
+  "mappings": "AAEE,CAAC,WAGC,MAAO,QACP,WAAY,OACZ,gBAAiB,KACjB,QAAS,aACT,UAAW,KAEX,OAAQ,QAXZ,cAYmB,KAZnB,QAaa,KAAK,KACd,WAAY,KACZ,cAAe,KACjB,CAEA,CAAC,cAEC,gBAAiB,QAAQ,UACzB,MAAO,KACP,YAAa,MAEf,CAEA,CAAC,aACC,WAAY,KACd,CACA,CAAC,MACC,MAAO,MACP,OAAQ,MA/BZ,cAgCmB,IACf,SAAU,OAjCd,QAkCa,IACT,WAAY,QACZ,QAAS,YACX,CAEA,CAVC,MAUM,IACL,MAAO,MACP,OAAQ,MAzCZ,cA0CmB,GACjB,CAEA,OAAO,CAAC,SAAS,EAAE,OACjB,CAAC,cACC,QAAS,IACX,CACF",
+  "names": []
+}
