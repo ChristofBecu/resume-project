@@ -6,6 +6,7 @@
   width: 95%;
   padding: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
   background: #eee;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -25,7 +26,7 @@
   line-height: 1.5em;
 }
 .job .highlights{
-  padding: 5px 0;
+  padding: 05px 0;
   font-weight: bold;
 }
 .job .job-details {

@@ -14,16 +14,20 @@ import { ContactComponent } from '../contact/contact.component';
 })
 export class WorkComponent implements OnInit {
   @Input() data!: JsonData;
-  work!: Work[];
+  works!: Work[];
 
   constructor(private resumeService: ResumeService) {}
 
   ngOnInit() {
     this.resumeService.data$.subscribe((data) => {
       if (data) {
-        this.work = data.work;
-        console.log("work highlights : ", this.work)
+        this.works = data.work;
       }
     });
   }
+
+  formatDate(date: string) {
+    return new Intl.DateTimeFormat('nl', { month: 'long', year: 'numeric' }).format(new Date(date));
+  }
+
 }

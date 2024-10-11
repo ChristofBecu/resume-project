@@ -7,6 +7,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { ResumeService } from './services/resume.service.ts.service';
 import { AboutComponent } from './components/about/about.component';
 import { JsonData } from './models/data.model';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeNl from '@angular/common/locales/nl';
+
+registerLocaleData(localeNl);
 
 @Component({
   selector: 'app-root',
@@ -57,5 +62,8 @@ export class AppComponent {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)],
+  providers: [
+    provideRouter(routes),
+    { provide: LOCALE_ID, useValue: 'nl' }
+  ],
 });
