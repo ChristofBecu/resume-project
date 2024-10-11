@@ -42,3 +42,9 @@
     height: 150px;
     border-radius: 50%;
   }
+
+  @media (min-width: 768px) {
+    #contactbutton {
+      display: none;
+    }
+  }

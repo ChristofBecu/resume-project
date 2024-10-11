@@ -22,7 +22,6 @@ export class ContactComponent implements OnInit {
     this.resumeService.data$.subscribe(data => {
       if (data) {
         this.basics = data.basics;
-console.log(this.basics)
         this.updateProfileIcons();
       }
     });
@@ -31,7 +30,6 @@ console.log(this.basics)
   updateProfileIcons() {
     if (this.basics !== undefined && this.basics.profiles !== undefined) {
       this.basics.profiles.forEach((profile: Profile) => {
-        console.log("updating icons")
         switch (profile.network.toLowerCase()) {
           case 'google-plus':
           case 'googleplus':
@@ -84,6 +82,7 @@ console.log(this.basics)
   }
 
   updateHoverText(text: string) {
+    console.log(text)
     this.hoverText = text;
   }
 
