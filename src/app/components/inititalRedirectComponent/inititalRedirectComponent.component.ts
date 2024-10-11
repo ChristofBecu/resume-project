@@ -10,6 +10,6 @@ export class InitialRedirectComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.router.navigate(['/about'], { skipLocationChange: true });
+    this.router.navigate(['/education'], { skipLocationChange: true });
   }
 }

@@ -1,3 +1,74 @@
-<p>
-  education works!
-</p>
+<div *ngIf="educations">
+  <div class="box">
+    <div class="col-xs-12 col-sm-7">
+      <!-- ABOUT ME -->
+        <h2><i class="fas fa-university ico"></i> Education</h2>
+        <ul id="education" class="clearfix">
+          <li *ngFor="let education of educations">
+            <div class="year pull-left">{{education.startDate | date : 'yyyy'}} <br> {{ education.endDate ? (education.endDate | date : 'yyyy') : 'Present' }}</div>
+            <div class="row">
+              <div class="details">
+                <div class="where">
+                  <div class="pull-right">
+                    <!-- {{education.organization}} -->
+                    
+                    
+                    
+                  </div>
+                </div>
+                <div class="description">
+                <h3>{{education.institution}} - {{education.location}}</h3>
+                  <div class="address">
+                    <a href="{{education.url}}" target="_blank
+            "><i class="fas fa-globe ico"></i> {{education.url}}</a>
+                  </div>
+                  <p><i class="fas fa-graduation-cap ico"></i> {{education.studyType}}</p>
+                  <p>{{education.area}}</p>
+                  <p>
+                    Grade: {{education.score}}
+                  </p>
+                  <div>Courses</div>
+                  <ul class="list-group">
+                    <li class="list-group-item">{{education.courses}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <app-contact class="hide-on-mobile"></app-contact>
+  </div>
+</div>
+
+
+
+    <!-- {{education}}
+          <li>
+            <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
+            <div class="description pull-right">
+              <h3>{{institution}}</h3>
+              <div class="where">{{organization}}</div>
+              {{#url}}
+              <div class="address">
+                <a href="{{url}}" target="_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
+              </div>
+              {{/url}}
+              {{#studyType}}<p><i class="fas fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
+              <p>{{area}}</p>
+              {{#score}}
+              <p>
+                Grade: {{score}}
+              </p>
+              <div>Courses</div>
+              <ul class="list-group">
+                <li class="list-group-item">{{{.}}}</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <app-contact class="hide-on-mobile"></app-contact>
+  </div>
+</div> -->
