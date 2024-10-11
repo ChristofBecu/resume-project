@@ -1,12 +1,40 @@
-<div class="container">
 
-<div class="row" *ngFor="let job of work">
-  <!-- <div class="job-details">
-    <div class="profession">{{ job.position }}</div>
-  </div> -->
-  <h3>{{ job.name }} - {{ job.position }} - {{ job.name }}</h3>
-  <p>{{ job.startDate }} - {{ job.endDate }}</p>
-  <p>{{ job.summary }}</p>
-</div>
+<div *ngIf="work">
+  <div class="box">
+    <div class="col-xs-12 col-sm-7">
+    <h2><i class="fas fa-suitcase ico"></i> Work Experience</h2>
+    <div class="job clearfix">
+      <div *ngFor="let job of work">
+        <div class="row">
+          <div class="details">
+            <div class="where">
+              {{job.name}}
+              <div class="pull-right">
+                {{job.location}}
+              </div>
+            </div>
+            <div class="description">
+              {{job.description}}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="job-details col-xs-11">
+            <div class="profession">{{job.position}}</div>
+            {{job.summary}}
+            <div class="description">
+              <div class="highlights" *ngIf="job.highlights">
+                highlights
+              </div>
+              <ul class="list-group" *ngFor="let highlight of job.highlights">
+                <li class="list-group-item">{{highlight}}</li>
+              </ul>
 
-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-contact></app-contact>
+  </div>
