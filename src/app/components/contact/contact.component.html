@@ -8,6 +8,16 @@
       <!-- LOCATION -->
       <div class="contact-item">
         <div class="icon pull-left text-center" 
+        (click)="
+          updateHoverText(
+            basics.location.postalCode +
+              ' ' +
+              basics.location.city +
+              ' ' +
+              basics.location.region +
+              ' (' +
+              basics.location.countryCode +
+              ')')" 
         (mouseover)="
           updateHoverText(
             basics.location.postalCode +
