@@ -55,7 +55,7 @@
       "startDate": "2021-02",
       "endDate": "2024-04",
       "keywords": [".NET Core", "Typescript", "Angular", "DevExpress", "Node.js", "TSQL", "SQL Server", "MySQL", "SSRS"],
-      "summary": "Ik was verantwoordelijk voor het ontwikkelen van nieuwe functionaliteiten en het onderhouden van bestaande softwareproducten. Daarbij werkte nauw samen met zowel het ontwikkelingsteam als klanten om hoogwaardige oplossingen te leveren. Mijn taken omvatten ondermeer het ontwerpen van de architectuur van nieuwe projecten, het optimaliseren van oude code en stored procedures, het opstellen van technische documentatie. Daarnaast was ik betrokken bij klantensupport en het oplossen van bugs.",
+      "summary": "Ik was verantwoordelijk voor het ontwikkelen van nieuwe functionaliteiten en het onderhouden van bestaande softwareproducten. Daarbij werkte ik nauw samen met zowel het ontwikkelingsteam als klanten om hoogwaardige oplossingen te leveren. Mijn taken omvatten ondermeer het ontwerpen van de architectuur van nieuwe projecten, het optimaliseren van oude code en stored procedures, het opstellen van technische documentatie. Daarnaast was ik betrokken bij klantensupport en het oplossen van bugs.",
       "highlights": [
         "Ontwikkeling van nieuwe functies voor bestaande softwareproducten",
         "Nieuwe rapporten ontwikkelen / oude rapporten optimaliseren",
@@ -76,7 +76,8 @@
       "image": "company-logo.jpg",
       "startDate": "2011-09",
       "endDate": "2017-11",
-      "summary": "Begonnen als medewerker logistiek en verzending met als doel ervoor te zorgen dat alle producten op tijd bij de klanten werden geleverd. Mijn taken omvatten het contact met klanten, het opstellen van documenten, het laden van vrachtwagens en het onderhoud van het magazijn. Later werd ik ook ingezet voor het ontwikkelen van een uitgebreide Excel-oplossing met behulp van VBA, gekoppeld aan een database, om de productie in Brugge af te stemmen met het dochterbedrijf in Macedonië."
+      "summary": "Begonnen als medewerker logistiek en verzending met als doel ervoor te zorgen dat alle producten op tijd bij de klanten werden geleverd. Mijn taken omvatten het contact met klanten, het opstellen van documenten, het laden van vrachtwagens en organisatie van het magazijn",
+      "highlights": ["Ontwikkelen van een uitgebreide Excel-oplossing met behulp van VBA, gekoppeld aan een database, om de productie in Brugge af te stemmen met het dochterbedrijf in Macedonië."]
     },
     {
       "name": "Daikin Europe nv",

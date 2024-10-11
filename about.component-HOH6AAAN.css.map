@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/about/about.component.css"],
-  "sourcesContent": ["@media (max-width: 767px) {\n  .hide-on-mobile {\n    display: none;\n  }\n}"],
-  "mappings": "AAAA,OAAO,CAAC,SAAS,EAAE,OACjB,CAAC,eACC,QAAS,IACX,CACF",
-  "names": []
-}
