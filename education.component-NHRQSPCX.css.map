@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/education/education.component.css"],
+  "sourcesContent": [".education{\n    margin-bottom: 15px;\n  }\n  .education .details {\n    margin-left: 3%;\n    width: 95%;\n    padding: 10px;\n    margin-bottom: 10px;\n    margin-top: 10px;\n    background: #eee;\n    border-bottom: 1px solid #ccc;\n    border-right: 1px solid #ccc;\n  }\n  .education .where{\n    font-size: 1.2em;\n    font-weight: bold;\n  }\n  .education .year{\n    opacity: 0.7;\n  }\n  .education .profession{\n    font-size: 1.2em;\n    font-weight: bold;\n  }\n  .education .description{\n    line-height: 1.5em;\n  }\n  .education .highlights{\n    padding: 05px 0;\n    font-weight: bold;\n  }\n  .education .education-details {\n    padding-left: 5%;\n    width: 100%;\n  }"],
+  "mappings": "AAAA,CAAC,UACG,cAAe,IACjB,CACA,CAHD,UAGY,CAAC,QACV,YAAa,GACb,MAAO,IALX,QAMa,KACT,cAAe,KACf,WAAY,KACZ,WAAY,KACZ,cAAe,IAAI,MAAM,KACzB,aAAc,IAAI,MAAM,IAC1B,CACA,CAbD,UAaY,CAAC,MACV,UAAW,MACX,YAAa,GACf,CACA,CAjBD,UAiBY,CAAC,KACV,QAAS,EACX,CACA,CApBD,UAoBY,CAAC,WACV,UAAW,MACX,YAAa,GACf,CACA,CAxBD,UAwBY,CAAC,YACV,YAAa,KACf,CACA,CA3BD,UA2BY,CAAC,WA3Bd,QA4Ba,KAAK,EACd,YAAa,GACf,CACA,CA/BD,UA+BY,CAAC,kBACV,aAAc,GACd,MAAO,IACT",
+  "names": []
+}
