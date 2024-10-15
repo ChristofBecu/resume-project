@@ -1,0 +1,45 @@
+.item-skills {
+    color: #334960;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+  
+  .skill {
+    color: #fff;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background: #32475c;
+    font-size: .85em;
+    white-space: normal; /* Allow multi-word keywords to wrap */
+    word-break: break-word; /* Ensure long words break */
+    max-width: 100%; /* Prevent overflow of container */
+    box-sizing: border-box;
+    flex-shrink: 1; /* Allow shrinking if necessary */
+  }
+  
+  .skill-level {
+    background-color: #227c74;
+    border-radius: 4px;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: .75em;
+    margin: 1px 10px;
+  }
+  
+  .skill.badge {
+    margin: 2px;
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    gap: 5px;
+    align-items: flex-start; /* Align to top to avoid centering */
+    width: 100%; /* Ensure container takes full width */
+  }
+  
