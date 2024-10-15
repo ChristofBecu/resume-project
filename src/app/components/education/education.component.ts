@@ -1,9 +1,7 @@
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { Component, Input, OnInit, ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
-import { Profile } from '../../models/profile.model';
-import { Basics } from '../../models/basics.model';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
 import { Education } from '../../models/education.model';
@@ -28,6 +26,29 @@ export class EducationComponent implements OnInit {
         this.educations = data.education;
       }
     });
-  }
 
+  }
+  
+  getFormattedDates(start: string, end: string) : string {
+    const startYear = new Date(start).getFullYear();
+    const endYear = new Date(end).getFullYear();
+
+    if (Number.isNaN(startYear) && Number.isNaN(endYear)) {
+      return '';
+    }
+
+    if (!Number.isNaN(startYear) && Number.isNaN(endYear)) {
+      return `${startYear.toString()} - Present`;
+    }
+
+    if (Number.isNaN(startYear) && !Number.isNaN(endYear)) {
+      return endYear.toString();
+    }
+
+    if (startYear == endYear) {
+      return startYear.toString();
+    }
+
+    return `${startYear.toString()} - ${endYear.toString()}`;
+  }
 }

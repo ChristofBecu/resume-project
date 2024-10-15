@@ -57,7 +57,6 @@ export class HeaderComponent implements OnInit {
 
   navigateTo(route: string) {
     this.currentRoute = route;
-    console.log('route', route);
     this.router.navigate([route], { skipLocationChange: true });
     // set the class of the current button to .currentButton
     changeCurrentButtonColor(route);
