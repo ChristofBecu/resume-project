@@ -1,5 +1,5 @@
 .item-skills {
-    color: #334960;
+    color: var(--color-alpha);
     padding: 5px 10px;
     margin-bottom: 10px;
     overflow: hidden;
@@ -9,11 +9,11 @@
   }
   
   .skill {
-    color: #fff;
+    color: var(--color-epsilon);
     margin-right: 5px;
     margin-bottom: 5px;
     padding: 5px 10px;
-    background: #32475c;
+    background: var(--color-zeta);;
     font-size: .85em;
     white-space: normal; /* Allow multi-word keywords to wrap */
     word-break: break-word; /* Ensure long words break */
@@ -23,9 +23,9 @@
   }
   
   .skill-level {
-    background-color: #227c74;
+    background-color: var(--color-gamma);
     border-radius: 4px;
-    color: #fff;
+    color: var(--color-epsilon);
     padding: 1px 8px;
     font-size: .75em;
     margin: 1px 10px;
