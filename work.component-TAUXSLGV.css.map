@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/work/work.component.css"],
+  "sourcesContent": [".job{\n  margin-bottom: 15px;\n}\n.job .details {\n  margin-left: 3%;\n  width: 95%;\n  padding: 10px;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  background: var(--color-theta);\n  border-bottom: 1px solid var(--color-iota);\n  border-right: 1px solid var(--color-iota);\n}\n.job .where{\n  font-size: 1.2em;\n  font-weight: bold;\n}\n.job .year{\n  opacity: 0.7;\n}\n.job .profession{\n  font-size: 1.2em;\n  font-weight: bold;\n}\n.job .description{\n  line-height: 1.5em;\n}\n.job .highlights{\n  padding: 05px 0;\n  font-weight: bold;\n}\n.job .job-details {\n  padding-left: 5%;\n  width: 100%;\n}"],
+  "mappings": "AAAA,CAAC,IACC,cAAe,IACjB,CACA,CAHC,IAGI,CAAC,QACJ,YAAa,GACb,MAAO,IALT,QAMW,KACT,cAAe,KACf,WAAY,KACZ,WAAY,IAAI,eAChB,cAAe,IAAI,MAAM,IAAI,cAC7B,aAAc,IAAI,MAAM,IAAI,aAC9B,CACA,CAbC,IAaI,CAAC,MACJ,UAAW,MACX,YAAa,GACf,CACA,CAjBC,IAiBI,CAAC,KACJ,QAAS,EACX,CACA,CApBC,IAoBI,CAAC,WACJ,UAAW,MACX,YAAa,GACf,CACA,CAxBC,IAwBI,CAAC,YACJ,YAAa,KACf,CACA,CA3BC,IA2BI,CAAC,WA3BN,QA4BW,KAAK,EACd,YAAa,GACf,CACA,CA/BC,IA+BI,CAAC,YACJ,aAAc,GACd,MAAO,IACT",
+  "names": []
+}
