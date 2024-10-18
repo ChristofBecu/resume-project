@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private resumeService: ResumeService, private router: Router) {}
   transformedSummary: string | undefined;
   basics!: any;
+  jsonResumeUrl = '';
   currentRoute = 'about';
 
   routes = [
@@ -46,8 +47,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.resumeService.getResumeData().subscribe((data) => {
+      console.log(data);
       const newLineToBrPipe = new NewLineToBrPipe();
       this.basics = data?.basics;
+      this.jsonResumeUrl = data?.meta?.link;
+      console.log(this.jsonResumeUrl);
       this.transformedSummary = newLineToBrPipe.transform(
         this.basics?.summary || ''
       );
@@ -56,8 +60,13 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateTo(route: string) {
-    this.currentRoute = route;
-    this.router.navigate([route], { skipLocationChange: true });
+    if (route === "print") {
+      window.open(this.jsonResumeUrl);
+    }
+    else {
+      this.currentRoute = route;
+      this.router.navigate([route], { skipLocationChange: true });
+    }
     // set the class of the current button to .currentButton
     changeCurrentButtonColor(route);
   }
