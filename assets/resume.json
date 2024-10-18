@@ -69,6 +69,18 @@
       ]
     },
     {
+      "name": "Eye-t part of NeoConsult",
+      "location": "Brugge",
+      "description": "ICT-adviesverlener en software ontwikkelingsbedrijf gespecialiseerd in maatwerkoplossingen en in een softwarepakket voor voedingsbeheer voor dienstverlenende organisaties",
+      "position": "Stage Graduaat Programmeren",
+      "url": "https://eyet.be",
+      "image": "company-logo.jpg",
+      "startDate": "2020-10",
+      "endDate": "2020-12",
+      "keywords": ["Typescript", "Angular", "Node.js", "Office 365", "Outlook Add-in", "Yeoman" ],
+      "summary": "Gedurende mijn stage bij Eye-t heb ik een Office 365-add-in ontwikkeld die het mogelijk maakte om vanuit Outlook een zaalreservatie te maken in een bestaand softwarepakket. Alle vooronderzoek en ontwikkeling heb ik zelfstandig uitgevoerd. De add-in werd ontwikkeld in TypeScript en Angular met behulp van Yeoman, die de boilerplate code voor add-ins genereerde. De add-in communiceerde met de bestaande API in .NET Core en SQL Server. De add-in werd geïntegreerd in Outlook en getest door de medewerkers van Eye-t en mijn mentor van Howest."
+    },
+    {
       "name": "Slabinck Laser Products",
       "location": "Brugge",
       "description": "Metaalbewerkingsbedrijf",
