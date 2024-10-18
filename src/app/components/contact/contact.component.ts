@@ -82,7 +82,6 @@ export class ContactComponent implements OnInit {
   }
 
   updateHoverText(text: string) {
-    console.log(text)
     this.hoverText = text;
   }
 

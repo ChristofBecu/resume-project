@@ -47,11 +47,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.resumeService.getResumeData().subscribe((data) => {
-      console.log(data);
       const newLineToBrPipe = new NewLineToBrPipe();
       this.basics = data?.basics;
       this.jsonResumeUrl = data?.meta?.link;
-      console.log(this.jsonResumeUrl);
       this.transformedSummary = newLineToBrPipe.transform(
         this.basics?.summary || ''
       );

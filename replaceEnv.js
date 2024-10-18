@@ -17,6 +17,5 @@ fs.readFile(envFilePath, 'utf8', (err, data) => {
       console.error(`Error writing file: ${err}`);
       process.exit(1);
     }
-    console.log('Environment variable replaced successfully.');
   });
 });

@@ -22,7 +22,6 @@ export class SkillsComponent implements OnInit {
     this.resumeService.data$.subscribe((data) => {
       if (data) {
         this.skills = data.skills;
-        console.log(this.skills);
       }
     });
   }
