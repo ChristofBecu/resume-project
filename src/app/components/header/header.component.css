@@ -11,6 +11,12 @@
     margin-bottom: -10px;
   }
 
+  @media (max-width: 767px) {
+    .menubutton {
+      padding: 10px 5px;
+    }
+  } 
+
   .currentbutton {
     text-decoration: var(--color-alpha) underline;
     color: var(--color-delta);
