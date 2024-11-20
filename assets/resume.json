@@ -234,6 +234,18 @@
       "startDate": "1986"
     }
   ],
+  "certificates": [
+    {
+      "name": "AI Promt Engineer",
+      "date": "2023-09-16",
+      "issuer": "Howest Academy"
+    },
+    {
+      "name": "Programmeren met ChatGPT",
+      "date": "2023-03-11",
+      "issuer": "Howest Academy"
+      }
+  ],
   "skills": [
     {
       "name": "Languages I worked with",
