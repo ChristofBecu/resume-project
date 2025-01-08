@@ -1,7 +1,6 @@
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule, formatDate } from '@angular/common';
-import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
 import { Education } from '../../models/education.model';
@@ -11,7 +10,7 @@ import { Education } from '../../models/education.model';
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css'],
-  imports: [CommonModule, NewLineToBrPipe, ContactComponent],
+  imports: [CommonModule, ContactComponent],
   standalone: true,
 })
 export class EducationComponent implements OnInit {

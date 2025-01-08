@@ -1,7 +1,6 @@
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule, formatDate } from '@angular/common';
-import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
 import { Certificate } from '../../models/certificate.model';
@@ -10,13 +9,15 @@ import { Certificate } from '../../models/certificate.model';
   selector: 'app-certificate',
   templateUrl: './certificate.component.html',
   styleUrls: ['./certificate.component.css'],
-  imports: [CommonModule, NewLineToBrPipe, ContactComponent],
+  imports: [CommonModule, ContactComponent],
   standalone: true,
 })
 export class CertificateComponent implements OnInit {
 
   @Input() data!: JsonData 
-  constructor(private resumeService: ResumeService) {}
+  constructor(
+    private resumeService: ResumeService
+  ) {}
 
   certificates!: Certificate[];
 

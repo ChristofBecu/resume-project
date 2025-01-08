@@ -12,12 +12,14 @@ import { ContactComponent } from '../contact/contact.component';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
   standalone: true,
-  imports: [CommonModule, NewLineToBrPipe, ContactComponent],
+  imports: [CommonModule, NewLineToBrPipe, ContactComponent, NewLineToBrPipe],
 })
 export class AboutComponent implements OnInit {
   @Input() data!: JsonData 
   
-  constructor(private resumeService: ResumeService) {}
+  constructor(
+    private resumeService: ResumeService,
+    private newLineToBrPipe: NewLineToBrPipe ) {}
 
   transformedSummary!: string;
   basics!: Basics;
@@ -27,8 +29,7 @@ export class AboutComponent implements OnInit {
     this.resumeService.data$.subscribe(data => {
       if (data) {
         this.basics = data.basics;
-        const newLineToBrPipe = new NewLineToBrPipe();
-        this.transformedSummary = newLineToBrPipe.transform(this.basics?.summary || '');
+        this.transformedSummary = this.newLineToBrPipe.transform(this.basics?.summary || '');
       }
     });
   }

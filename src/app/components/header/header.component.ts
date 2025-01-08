@@ -12,7 +12,12 @@ import { Router } from '@angular/router';
   imports: [CommonModule, NewLineToBrPipe],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private resumeService: ResumeService, private router: Router, private cdr : ChangeDetectorRef ) {}
+  constructor(
+    private resumeService: ResumeService, 
+    private router: Router, 
+    private cdr : ChangeDetectorRef,
+    private newLineToBrPipe: NewLineToBrPipe
+  ) {}
   transformedSummary: string | undefined;
   basics!: any;
   jsonResumeUrl = '';
@@ -47,10 +52,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.resumeService.getResumeData().subscribe((data) => {
-      const newLineToBrPipe = new NewLineToBrPipe();
       this.basics = data?.basics;
       this.jsonResumeUrl = data?.meta?.link;
-      this.transformedSummary = newLineToBrPipe.transform(
+      this.transformedSummary = this.newLineToBrPipe.transform(
         this.basics?.summary || ''
       );
       changeCurrentButtonColor(this.currentRoute);
