@@ -4,6 +4,7 @@ import { CommonModule, formatDate } from '@angular/common';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
 import { Education } from '../../models/education.model';
+import { BaseComponent } from '../base/base.component';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { Education } from '../../models/education.model';
   imports: [CommonModule, ContactComponent],
   standalone: true,
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent extends BaseComponent implements OnInit {
   @Input() data!: JsonData 
-  constructor(private resumeService: ResumeService) {}
+  constructor(private resumeService: ResumeService) {
+    super();
+  }
 
   educations!: Education[];
 

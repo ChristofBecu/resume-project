@@ -4,6 +4,7 @@ import { ResumeService } from '../../services/resume.service.ts.service';
 import { Profile } from '../../models/profile.model';
 import { Basics } from '../../models/basics.model';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-contact',
@@ -12,11 +13,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule]
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent extends BaseComponent implements OnInit {
   @Input() data!: JsonData 
   hoverText: string = "";
   basics!: Basics;
-  constructor(private resumeService: ResumeService) { }
+  constructor(private resumeService: ResumeService) {
+    super();
+   }
 
   ngOnInit() {
     this.resumeService.data$.subscribe(data => {

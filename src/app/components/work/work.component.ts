@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Work } from '../../models/work.model';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-work',
@@ -12,11 +13,13 @@ import { ContactComponent } from '../contact/contact.component';
   styleUrls: ['./work.component.css'],
   imports: [CommonModule, ContactComponent],
 })
-export class WorkComponent implements OnInit {
+export class WorkComponent extends BaseComponent implements OnInit {
   @Input() data!: JsonData;
   works!: Work[];
 
-  constructor(private resumeService: ResumeService) {}
+  constructor(private resumeService: ResumeService) {
+    super();
+  }
 
   ngOnInit() {
     this.resumeService.data$.subscribe((data) => {

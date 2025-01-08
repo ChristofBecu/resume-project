@@ -4,6 +4,7 @@ import { CommonModule, formatDate } from '@angular/common';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
 import { Certificate } from '../../models/certificate.model';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-certificate',
@@ -12,12 +13,14 @@ import { Certificate } from '../../models/certificate.model';
   imports: [CommonModule, ContactComponent],
   standalone: true,
 })
-export class CertificateComponent implements OnInit {
+export class CertificateComponent extends BaseComponent implements OnInit {
 
   @Input() data!: JsonData 
   constructor(
     private resumeService: ResumeService
-  ) {}
+  ) {
+    super();
+  }
 
   certificates!: Certificate[];
 

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
 import { Skill } from '../../models/skill.model';
+import { BaseComponent } from '../base/base.component';
 
 
 @Component({
@@ -13,10 +14,12 @@ import { Skill } from '../../models/skill.model';
   styleUrls: ['./skills.component.css'],
   imports: [CommonModule, ContactComponent],
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent extends BaseComponent implements OnInit {
   @Input() data!: JsonData;
   skills!: Skill[];
-  constructor(private resumeService: ResumeService) { }
+  constructor(private resumeService: ResumeService) { 
+    super();
+  }
 
   ngOnInit() {
     this.resumeService.data$.subscribe((data) => {

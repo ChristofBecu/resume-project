@@ -6,6 +6,7 @@ import { Profile } from '../../models/profile.model';
 import { Basics } from '../../models/basics.model';
 import { JsonData } from '../../models/data.model';
 import { ContactComponent } from '../contact/contact.component';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
   selector: 'app-about',
@@ -14,12 +15,14 @@ import { ContactComponent } from '../contact/contact.component';
   standalone: true,
   imports: [CommonModule, NewLineToBrPipe, ContactComponent, NewLineToBrPipe],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent extends BaseComponent implements OnInit {
   @Input() data!: JsonData 
   
   constructor(
     private resumeService: ResumeService,
-    private newLineToBrPipe: NewLineToBrPipe ) {}
+    private newLineToBrPipe: NewLineToBrPipe ) {
+    super();
+    }
 
   transformedSummary!: string;
   basics!: Basics;

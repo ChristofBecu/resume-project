@@ -1,8 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { CommonModule } from '@angular/common';
 import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
 import { Router } from '@angular/router';
+import { BaseComponent } from '../base/base.component';
+
 
 @Component({
   selector: 'app-header',
@@ -11,13 +14,16 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, NewLineToBrPipe],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent extends BaseComponent implements OnInit {
+  
   constructor(
     private resumeService: ResumeService, 
     private router: Router, 
     private cdr : ChangeDetectorRef,
     private newLineToBrPipe: NewLineToBrPipe
-  ) {}
+  ) {
+    super();
+  }
   transformedSummary: string | undefined;
   basics!: any;
   jsonResumeUrl = '';
@@ -51,15 +57,16 @@ export class HeaderComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.resumeService.getResumeData().subscribe((data) => {
-      this.basics = data?.basics;
-      this.jsonResumeUrl = data?.meta?.link;
-      this.transformedSummary = this.newLineToBrPipe.transform(
-        this.basics?.summary || ''
-      );
-      changeCurrentButtonColor(this.currentRoute);
-      this.cdr.detectChanges();
-    });
+    this.subscription.add(
+      this.resumeService.getResumeData().subscribe((data) => {
+        this.basics = data?.basics;
+        this.jsonResumeUrl = data?.meta?.link;
+        this.transformedSummary = this.newLineToBrPipe.transform(
+          this.basics?.summary || ''
+        );
+        changeCurrentButtonColor(this.currentRoute);
+        this.cdr.detectChanges();
+    }));
   }
 
   navigateTo(route: string) {
