@@ -69,6 +69,11 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     }));
   }
 
+  override ngOnDestroy(): void {
+    super.ngOnDestroy();
+    this.cdr.detach();
+  }
+
   navigateTo(route: string) {
     if (route === "print") {
       window.open(this.jsonResumeUrl);
