@@ -2,21 +2,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, from, Observable, of } from 'rxjs';
 import { JsonData } from '../models/data.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResumeService {
-  private gistUrl: string;
+  private gistUrl: string = environment.gistResumeUrl;
   private dataSubject = new BehaviorSubject<JsonData | null>(null);
   data$ = this.dataSubject.asObservable();
 
   constructor() {
-    if (window.location.hostname === 'localhost') {
-      this.gistUrl = '/assets/resume.json';
-    } else {
-      this.gistUrl = '/resume-project/assets/resume.json';
-    }
   }
 
   setData(data: JsonData) {
