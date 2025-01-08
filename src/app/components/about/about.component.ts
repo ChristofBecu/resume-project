@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { CommonModule } from '@angular/common';
 import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
@@ -17,7 +17,7 @@ import { ContactComponent } from '../contact/contact.component';
 export class AboutComponent implements OnInit {
   @Input() data!: JsonData 
   
-  constructor(private resumeService: ResumeService, private cdr: ChangeDetectorRef) {}
+  constructor(private resumeService: ResumeService) {}
 
   transformedSummary!: string;
   basics!: Basics;

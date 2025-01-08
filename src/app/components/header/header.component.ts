@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ResumeService } from '../../services/resume.service.ts.service';
 import { CommonModule } from '@angular/common';
 import { NewLineToBrPipe } from '../../pipes/newline-to-br.pipe';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   imports: [CommonModule, NewLineToBrPipe],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private resumeService: ResumeService, private router: Router) {}
+  constructor(private resumeService: ResumeService, private router: Router, private cdr : ChangeDetectorRef ) {}
   transformedSummary: string | undefined;
   basics!: any;
   jsonResumeUrl = '';
@@ -54,6 +54,7 @@ export class HeaderComponent implements OnInit {
         this.basics?.summary || ''
       );
       changeCurrentButtonColor(this.currentRoute);
+      this.cdr.detectChanges();
     });
   }
 
@@ -77,11 +78,4 @@ function changeCurrentButtonColor(route: string) {
   });
   const currentButton = document.getElementById(route + 'button');
   currentButton?.classList.add('currentbutton');
-
-
-
-
-
-
-
 }
