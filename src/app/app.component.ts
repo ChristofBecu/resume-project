@@ -1,8 +1,5 @@
-import { Component, importProvidersFrom, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
-import { provideRouter } from '@angular/router';
-import { bootstrapApplication } from '@angular/platform-browser';
-import { routes } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
 import { ResumeService } from './services/resume.service.ts.service';
 import { AboutComponent } from './components/about/about.component';
@@ -61,9 +58,3 @@ export class AppComponent {
   }
 }
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes),
-    { provide: LOCALE_ID, useValue: 'nl' }
-  ],
-});
