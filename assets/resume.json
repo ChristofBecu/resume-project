@@ -36,6 +36,17 @@
   },
   "work": [
     {
+      "name": "Woesh",
+      "location": "Brugge",
+      "description": "Circusatelier",
+      "position": "Vrijwilliger",
+      "url": "https://woesh.be",
+      "image": "company-logo.jpg",
+      "startDate": "2023-04-01",
+      "endDate": "2024-05-31",
+      "summary": "Vrijwilliger bij Woesh Circusatelier, waar ik verantwoordelijk ben voor het updaten van de website (Wordpress) en het ontwikkelen van automatisering van invulformulieren (Google Forms - Google App Scripts) "
+    },
+    {
       "name": "Die Keure",
       "location": "Brugge",
       "description": "Drukkerij / Uitgeverij",
